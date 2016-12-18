@@ -3,7 +3,6 @@
 import glob
 import os
 import re
-import collections
 import numpy as np
 import itertools as it
 import pandas as pd
@@ -95,7 +94,7 @@ class OutFile():
         hx_names = [row[0] for row in raw_data]
         # df = pd.DataFrame(data=data, columns=self.out_lines[i].split())
         multi_header = pd.MultiIndex.from_product([header[1:], hx_names], names=['var', 'hx'])
-        multi_index = pd.MultiIndex.from_product([self.load_case, self.model_ver],
+        multi_index = pd.MultiIndex.from_product([(self.load_case, ), (self.model_ver, )],
                                                  names=['loadcase', 'model'])
         data = np.array([row[1:] for row in raw_data]).astype(float)
         data = np.reshape(data.T, data.size)
@@ -119,8 +118,8 @@ class OutFile():
         # multi_header = pd.MultiIndex.from_product([self.load_case, self.model_ver],
         #                                           names=['loadcase', 'model'])
         # df = pd.DataFrame(data=temps, columns=multi_header, index=parts)
-        multi_index = pd.MultiIndex.from_product([parts, self.load_case],
-                                                  names=['part', 'loadcase'])
+        multi_index = pd.MultiIndex.from_product([parts, (self.load_case, )],
+                                                 names=['part', 'loadcase'])
         df = pd.DataFrame(data=temps, columns=[self.model_ver], index=multi_index)
         print('check:\n', df)
         self.df_part_data = df
