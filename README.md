@@ -5,7 +5,8 @@ While doing Computational Fluid Dynamics (CFD) analyses it is a typical problem 
 [This script](collect_results.py) demonstrates how this post-processing work can be automated using Python. The output files with the CFD results are organized to a directory structure (v00, v01, etc.). The script can then:
 * read the output files with the results
 * collect them to [pandas](http://pandas.pydata.org/) dataframes
-* create plots with [matplotlib](http://matplotlib.org)
+* create plots with [matplotlib](http://matplotlib.org):
+![plot](hx_plots.png)
 * write the data to a spreadsheet (in excel xlsx format)
 
 The example shows some typical data extracted from underhood flow simulations (heat exchanger data, part temperatures).
