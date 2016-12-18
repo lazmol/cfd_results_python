@@ -1,0 +1,24 @@
+whatever log messages
+#
+CarV:   50 m/s
+AmbientT:   49 C
+AmbientP:   1.013 bar
+#
+some other output
+some other output
+some other output
+some other output
+some other output
+    HX            Tin[c]                  Tout[c]         meanV[m/s]
+CONDENSER         50.5                    53.7              6.6
+RADIATOR         56.4                     74.4              6.0
+CAC             49.2                      55.5              7.5
+ATOC            55.4                    60.5                4.6
+some other output
+some other output
+some other output
+MAX WALLT [K]
+rubber_joint  : 344
+tank_top : 328
+some other output
+some other output
